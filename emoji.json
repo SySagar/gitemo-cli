@@ -1,0 +1,33 @@
+{
+    "build":{
+        "task":"🔨  build changes",
+        "emoji":"🔨",
+        "type": "build"
+    },
+    "feature":{
+        "task":"✨  new feature added",
+        "emoji":"✨",
+        "type": "feat"
+    },
+    "remove":{
+        "task":"🗑️  removed useless code",
+        "emoji":"🗑️",
+        "type": "remove"
+    },
+    "fix":{
+        "task":"🐛  resolved any issue",
+        "emoji":"🐛",
+        "type": "fix"
+    },
+    "chore":{
+        "task":"🕶️   not seen by user",
+        "emoji":"🕶️",
+        "type": "chore"
+    },
+    "refactor":{
+        "task":"✒️  changed any naming",
+        "emoji":"✒️",
+        "type": "refactor"
+    }
+    
+}
