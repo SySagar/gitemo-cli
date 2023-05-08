@@ -1,0 +1,11 @@
+#!/bin/sh
+
+message=$1
+currentBranch=$(git symbol-ref --short -q HEAD)
+
+if[ ! -z "$1"]
+then
+    git commit -m "$message"
+    else
+    echo "Commit message not provided"
+fi
