@@ -5,6 +5,9 @@ import emoij from './emoji.json' assert {type: 'json'};
 import cliSpinners from "cli-spinners";
 import { createSpinner } from 'nanospinner';
 import chalkAnimation from 'chalk-animation';
+import {exec} from 'child_process'
+import shell from 'shelljs'
+import { exit } from 'process';
 
 const sleep = (ms = 2500) => new Promise((r) => setTimeout(r, ms));
 let commitMsg = "done something";
@@ -75,13 +78,61 @@ async function options() {
     defTypes(opts.options);
 }
 
+async function run(){
+
+    //  exec.execSync(`
+    //  #! /usr/bin/bash
+    //   git add .
+    // git commit -m "${messageEmoji} ${messageType} : ${commitMsg}"
+    // `, {stdio: 'inherit'}, (error, stdout, stderr) => {
+    //     if (error) {
+    //         console.log(`error: ${error.message}`);
+    //         return;
+    //     }
+    //     if (stderr) {
+    //         console.log(`stderr: ${stderr}`);
+    //         return;
+    //     }
+    // });
+
+    // shell.exec(`git commit -m "${messageEmoji} ${messageType} : ${commitMsg}"
+    // `);
+
+    console.log(shell.pwd().toString())
+
+    
+
+    // try {
+    //     exec(`git add . && git commit -m "${messageEmoji} ${messageType} : ${commitMsg}"`,{ cwd: shell.pwd().toString() });
+    //     console.log('Git commit successful.');
+    //   } catch (error) {
+    //     console.error(`Git commit error: ${error}`);
+    //   }
+
+    if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
+        shell.echo('Error: Git commit failed');
+        shell.exit(1);
+      }
+
+    // if (shell.exec(`git commit -m "${messageEmoji} ${messageType} : ${commitMsg}"`).code !== 0) {
+    //     console.log('Error: Git commit failed');
+    //     exit(1);
+    //   }
+    console.log(messageEmoji+" "+messageType+" : "+commitMsg);
+    return Promise.resolve("Success");
+}
+
 async function commit() {
 
     const spinner = createSpinner('commiting the code...\n\n\n').start();
     await sleep();
     console.clear();
-    console.log(messageEmoji+" "+messageType+" : "+commitMsg);
-    process.exit(0);
+
+   
+    run().then(() => {
+        console.log('done')
+        process.exit(0);
+    });
 }
 
 async function commitMessage() {
