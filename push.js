@@ -7,7 +7,7 @@ import chalkAnimation from "chalk-animation";
 
 var selectedRemote ="";
 const remoteUrlArr = [];
-
+var remoteName ="";
 var selectedBranch ="";
 var branchName ="";
 const branchArr = [];
@@ -30,7 +30,7 @@ async function pushCode() {
 
     remoteUrlArr.pop();
 
-    var remoteName = remoteUrlArr[0].split('--------')[0];
+    remoteName =  remoteUrlArr[0].split('--------')[0];
 
     const listRemotes = await inquirer.prompt({
         name: "options",
@@ -59,18 +59,18 @@ async function pushCode() {
       });
 
       selectedBranch = listBranch.options
-      selectedBranch = selectedBranch.replace('* ', chalk.green('*'));
+      selectedBranch = selectedBranch.replace('*', chalk.green(''));
 
+      console.log(selectedBranch);
+        console.log(remoteName);
+        const rainbowTitle = chalkAnimation.rainbow("✈️  Pushing code....\n");
+        await sleep();
       shell.exec(`git push ${remoteName} ${selectedBranch}`);
-    console.clear();
+    //console.clear();
 
-
-  const rainbowTitle = chalkAnimation.rainbow("✈️ Pushing code....\n");
-
-  await sleep();
   rainbowTitle.stop();
 
-  console.log(chalk.bgBlueBright.bold(`✅ Succesfully pused to ${selectedRemote} ${selectedBranch}`));
+  console.log(chalk.bgBlueBright.bold(`✅ Succesfully pushed to ${selectedRemote} ${selectedBranch}`));
 
 }
 
