@@ -30,6 +30,8 @@ async function pushCode() {
 
     remoteUrlArr.pop();
 
+    var remoteName = remoteUrlArr[0].split('--------')[0];
+
     const listRemotes = await inquirer.prompt({
         name: "options",
         type: "list",
@@ -59,7 +61,7 @@ async function pushCode() {
       selectedBranch = listBranch.options
       selectedBranch = selectedBranch.replace('* ', chalk.green('*'));
 
-      shell.exec(`git push ${selectedRemote} ${selectedBranch}`);
+      shell.exec(`git push ${remoteName} ${selectedBranch}`);
     console.clear();
 
 
