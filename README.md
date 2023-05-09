@@ -10,11 +10,23 @@ A emoji-based git cli for developers to write production level commits!
 ```
 
 - Make changes to your code (must be initalised with git already)
-
 - Use it by running in terminal
 
+- To make commit changes:
  ```bash
   gitemo
+```
+- To make make a new branch:
+ ```bash
+  gitemo-new-branch
+```
+- To delete an existing branch:
+ ```bash
+  gitemo-delete-branch
+```
+- To switch branches:
+ ```bash
+  gitemo-branches
 ```
 
 ## Run Locally
@@ -41,6 +53,10 @@ Start the the local CLI
 ```bash
    yarn start
 ```
+
+## Screenshots
+<img src="https://github.com/SySagar/gitemo-cli/blob/main/Capture.jpg" />
+<img height=150px src="https://github.com/SySagar/gitemo-cli/blob/main/Capture.jpg" />
 
 ## License
 
