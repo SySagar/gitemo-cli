@@ -5,7 +5,11 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "gitemo": "index.js"
+    "gitemo": "index.js",
+    "gitemo-new-branch": "new-branch.js",
+    "gitemo-delete-branch": "delete-branch.js",
+    "gitemo-branches": "change-branch.js",
+    "gitemo-push": "push.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
