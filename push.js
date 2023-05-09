@@ -29,7 +29,6 @@ async function pushCode() {
     });
 
     remoteUrlArr.pop();
-    console.log(remoteUrlArr);
 
     const listRemotes = await inquirer.prompt({
         name: "options",
