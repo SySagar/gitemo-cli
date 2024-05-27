@@ -1,5 +1,5 @@
-import MuteStream from 'mute-stream';
 import readline from 'node:readline';
+import MuteStream from 'mute-stream';
 
 /**
  * Base interface class other can inherits from
@@ -9,9 +9,7 @@ export default class UI {
   constructor(opt) {
     // Instantiate the Readline interface
     // @Note: Don't reassign if already present (allow test to override the Stream)
-    if (!this.rl) {
-      this.rl = readline.createInterface(setupReadlineOptions(opt));
-    }
+    this.rl ||= readline.createInterface(setupReadlineOptions(opt));
 
     this.rl.resume();
 
@@ -69,7 +67,7 @@ function setupReadlineOptions(opt = {}) {
   // If it isn't return a failed promise
   if (!opt.skipTTYChecks && !input.isTTY) {
     const nonTtyError = new Error(
-      'Prompts can not be meaningfully rendered in non-TTY environments'
+      'Prompts can not be meaningfully rendered in non-TTY environments',
     );
     nonTtyError.isTtyError = true;
     throw nonTtyError;
