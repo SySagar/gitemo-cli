@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "chalk": "^5.3.0",
-    "inquirer": "^9.2.22",
+    "inquirer": "^9.2.23",
+    "inquirer-autocomplete-prompt": "^3.0.1",
     "meow": "^13.2.0",
     "update-notifier": "^7.0.0"
   },

@@ -3,8 +3,6 @@ const FLAGS = Object.freeze({
   HELP: 'help',
   INIT: 'init',
   LIST: 'list',
-  SEARCH: 'search',
-  UPDATE: 'update',
   VERSION: 'version',
 });
 
