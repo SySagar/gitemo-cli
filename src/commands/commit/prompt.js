@@ -3,6 +3,7 @@ import guard from './guard';
 import { capitaliseTitle } from '../../utils/capitaliseTitle';
 import inquirer from 'inquirer';
 import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
+import configurationVault from '../../utils/configurationVault';
 
 inquirer.registerPrompt('autocomplete', inquirerAutocompletePrompt);
 
@@ -29,9 +30,7 @@ export default (gitmojis, options) => {
         const length = (title || input).length.toString().padStart(2, '0');
 
         return `[${length}/${TITLE_MAX_LENGTH_COUNT}]: ${
-          configurationVault.getCapitalizeTitle()
-            ? capitaliseTitle(input)
-            : input
+          configurationVault.getCapitalizeTitle ? capitaliseTitle(input) : input
         }`;
       },
       ...(title ? { default: title } : {}),
