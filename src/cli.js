@@ -31,7 +31,9 @@ const cli = meow(
 
 export const options = {
   [FLAGS.COMMIT]:async (options) =>
-  await (await import('./commands/commit/index.js')).default(options),
+  (await import('./commands/commit/index.js')).default(options),
+  [FLAGS.LIST]: async () =>
+  (await import('./commands/list/index.js')).default(),
 }
 
 findGitemoCommand(cli, options);

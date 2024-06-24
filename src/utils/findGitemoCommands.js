@@ -1,4 +1,5 @@
 import FLAGS from '../constants/flag.js';
+import { runCommand } from './test.js';
 
 const isSupportedCommand = (command, options) => {
   return Object.keys(options).includes(command);
@@ -12,12 +13,12 @@ const determineCommand = (flags, input, options) => {
 
   return command
     ? {
-        //legit flag/command
+        //legit flag/command with --{}
         type: 'flag',
         command,
       }
     : {
-        //random command other than flags
+        //flag specified directly without --
         type: 'command',
         command: input[0],
       };
