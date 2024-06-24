@@ -4,13 +4,14 @@ import { capitaliseTitle } from '../../utils/capitaliseTitle';
 import inquirer from 'inquirer';
 import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
 import configurationVault from '../../utils/configurationVault';
+import getDefaultCommitContent from '../../utils/getDefaultCommitContent';
 
 inquirer.registerPrompt('autocomplete', inquirerAutocompletePrompt);
 
 const TITLE_MAX_LENGTH_COUNT = 48;
 
 export default (gitmojis, options) => {
-  const { title, message, scope } = getDefaultCommitContent(options);
+  const { title, message } = getDefaultCommitContent(options);
 
   return [
     {
