@@ -1,7 +1,6 @@
 export const gitmojis = [
   {
     emoji: '🚀',
-    entity: '&#x1f680;',
     code: ':rocket:',
     description: 'New feature or proposition',
     type: 'feat',
@@ -10,7 +9,6 @@ export const gitmojis = [
   },
   {
     emoji: '🐛',
-    entity: '&#x1f41b;',
     code: ':bug:',
     description: 'Fix a bug',
     type: 'fix',
@@ -19,7 +17,6 @@ export const gitmojis = [
   },
   {
     emoji: '📝',
-    entity: '&#x1f4dd;',
     code: ':memo:',
     description: 'Add or update documentation',
     type: 'docs',
@@ -28,7 +25,6 @@ export const gitmojis = [
   },
   {
     emoji: '💄',
-    entity: '&#ff99cc;',
     code: ':lipstick:',
     description: 'Add or update the UI and style files.',
     type: 'style',
@@ -37,7 +33,6 @@ export const gitmojis = [
   },
   {
     emoji: '♻️',
-    entity: '&#x267b;',
     code: ':recycle:',
     description: 'Refactor code.',
     type: 'refactor',
@@ -46,7 +41,6 @@ export const gitmojis = [
   },
   {
     emoji: '🧪',
-    entity: '&#x1F9EA;',
     code: ':test_tube:',
     description: 'Add test cases, test files or fix existing tests.',
     type: 'test',
@@ -54,8 +48,15 @@ export const gitmojis = [
     semver: null,
   },
   {
+    emoji: '⚙️',
+    code: ':chore:',
+    description: 'Update grunt task/ auxilary tasks',
+    type: 'chore',
+    name: 'chore',
+    semver: null,
+  },
+  {
     emoji: '🔖',
-    entity: '&#x1f516;',
     code: ':bookmark:',
     description: 'Release / Version tags.',
     type: 'release',
@@ -64,7 +65,6 @@ export const gitmojis = [
   },
   {
     emoji: '🚧',
-    entity: '&#x1f6a7;',
     code: ':construction:',
     description: 'Work in progress.',
     type: 'wip',
@@ -73,10 +73,9 @@ export const gitmojis = [
   },
   {
     emoji: '📦',
-    entity: '&#1f4e6;',
     code: ':package:',
     description: 'Update compiled files or packages.',
-    type: 'chore',
+    type: 'package',
     name: 'package',
     semver: null,
   },
