@@ -7,7 +7,6 @@ export default [
   pluginJs.configs.recommended,
   {
     rules: {
-      semi: ['error', 'always'], // Enforces the use of semicolons
       'prefer-const': 'error', // Enforces the use of const over let when variables are not reassigned
       'no-unused-vars': 'warn', // Warns about unused variables instead of throwing an error
       'eqeqeq': 'error', // Enforces the use of === and !==

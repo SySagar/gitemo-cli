@@ -1,10 +1,11 @@
 import Conf from 'conf';
 
-import { CONFIG } from '../../constants/config';
+import { CONFIG } from '../../constants/config.js';
 
 const DEFAULT_CONFIGURATION = {
   [CONFIG.MESSAGE_PROMPT]: true,
   [CONFIG.CAPITALIZE_TITLE]: true,
+  [CONFIG.AUTO_ADD]: false,
 };
 
 const LOCAL_CONFIGURATION = new Conf({
@@ -17,6 +18,10 @@ const LOCAL_CONFIGURATION = new Conf({
     [CONFIG.CAPITALIZE_TITLE]: {
       type: 'boolean',
       default: DEFAULT_CONFIGURATION[CONFIG.CAPITALIZE_TITLE],
+    },
+    [CONFIG.AUTO_ADD]: {
+      type: 'boolean',
+      default: DEFAULT_CONFIGURATION[CONFIG.AUTO_ADD],
     },
   },
 });

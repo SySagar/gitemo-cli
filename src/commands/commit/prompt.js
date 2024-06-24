@@ -1,16 +1,16 @@
 /* eslint-disable */
-import guard from './guard';
-import { capitaliseTitle } from '../../utils/capitaliseTitle';
+import guard from './guard.js';
+import { capitaliseTitle } from '../../utils/capitaliseTitle.js';
 import inquirer from 'inquirer';
 import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
-import configurationVault from '../../utils/configurationVault';
-import getDefaultCommitContent from '../../utils/getDefaultCommitContent';
+import configurationVault from '../../utils/configurationVault/index.js';
+import getDefaultCommitContent from '../../utils/getDefaultCommitContent.js';
 
 inquirer.registerPrompt('autocomplete', inquirerAutocompletePrompt);
 
 const TITLE_MAX_LENGTH_COUNT = 48;
 
-export default (gitmojis, options) => {
+export default async (gitmojis, options) => {
   const { title, message } = getDefaultCommitContent(options);
 
   return [
@@ -18,9 +18,9 @@ export default (gitmojis, options) => {
       name: 'gitmoji',
       message: 'Choose a gitmoji commit type:',
       type: 'list',
-      choices: gitmojis.map(({ emoji, description }) => ({
-        value: emoji,
-        name: `${emoji}  - ${description}`,
+      choices: gitmojis.map(({ emoji, description, type }) => ({
+        value: `${emoji} ${type}`,
+        name: `${emoji} - ${description}`,
       })),
     },
     {

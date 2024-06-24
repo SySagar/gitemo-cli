@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import meow from 'meow';
-import FLAGS from './flag';
+import FLAGS from './constants/flag.js';
+import findGitemoCommand from './utils/findGitemoCommands.js';
 
 const cli = meow(
   `
@@ -27,3 +28,10 @@ const cli = meow(
     },
   }
 );
+
+export const options = {
+  [FLAGS.COMMIT]:async (options) =>
+  await (await import('./commands/commit/index.js')).default(options),
+}
+
+findGitemoCommand(cli, options);
