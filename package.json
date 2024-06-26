@@ -16,7 +16,8 @@
     "lint": "eslint ./src/**/*.{js,ts}",
     "format": "prettier --write src/**/* && git add -A .",
     "prepare": "husky",
-    "update": "npm install -g gitemo-cli"
+    "update": "npm install -g gitemo-cli",
+    "re-link": "npm unlink test-gitemo && npm link"
   },
   "dependencies": {
     "chalk": "^5.3.0",
