@@ -8,6 +8,9 @@
   "files": [
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "aliases": {
     "@root": ".",
     "@": "src",
