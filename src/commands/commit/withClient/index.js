@@ -1,6 +1,6 @@
 import { execa } from 'execa';
 import chalk from 'chalk';
-import configurationVault from '../../../utils/configurationVault/index.js';
+import configurationVault from '@utils/configurationVault/index.js';
 
 const withClient = async (answers) => {
   try {

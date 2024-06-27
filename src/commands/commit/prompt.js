@@ -4,8 +4,8 @@ import { capitaliseTitle } from '../../utils/capitaliseTitle.js';
 import inquirer from 'inquirer';
 import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
 import configurationVault from '../../utils/configurationVault/index.js';
-import getDefaultCommitContent from '../../utils/getDefaultCommitContent.js';
-import filtergitemo from '../../utils/filtergitemo.js';
+import getDefaultCommitContent from '@utils/getDefaultCommitContent.js';
+import filtergitemo from '@utils/filtergitemo.js';
 
 inquirer.registerPrompt('autocomplete', inquirerAutocompletePrompt);
 

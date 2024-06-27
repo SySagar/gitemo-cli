@@ -7,6 +7,8 @@
       "paths": {                         // Specify path mapping
         "@/*": ["src/*"],
         "@constants/*": ["src/constants/*"],
+        "@commands/*": ["src/commands/*"],
+        "@utils/*": ["src/utils/*"]
       },
       "esModuleInterop": true,           // Enable ES6 modules interop
       "forceConsistentCasingInFileNames": true,

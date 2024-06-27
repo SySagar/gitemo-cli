@@ -1,9 +1,9 @@
 import inquirer from 'inquirer';
-import { gitmojis } from '../../utils/emoji.js';
+import { gitmojis } from '@utils/emoji.js';
 import prompt from './prompt.js';
-import { capitaliseTitle } from '../../utils/capitaliseTitle.js';
+import { capitaliseTitle } from '@utils/capitaliseTitle.js';
 import withClient from './withClient/index.js';
-import configurationVault from '../../utils/configurationVault/index.js';
+import configurationVault from '@utils/configurationVault/index.js';
 
 const promptAndCommit = (options) => {
   prompt(gitmojis, options).then((questions) => {

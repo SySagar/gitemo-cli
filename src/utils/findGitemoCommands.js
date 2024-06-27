@@ -1,5 +1,4 @@
-import FLAGS from '../constants/flag.js';
-import { runCommand } from './test.js';
+import FLAGS from '@constants/flag.js';
 
 const isSupportedCommand = (command, options) => {
   return Object.keys(options).includes(command);

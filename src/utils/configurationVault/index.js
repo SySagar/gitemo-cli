@@ -1,4 +1,4 @@
-import { CONFIG } from '../../constants/config.js';
+import { CONFIG } from '@constants/config.js';
 import getConfiguration from './getConfiguration.js';
 
 const config = getConfiguration();
