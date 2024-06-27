@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.2.0
+
+### Minor Changes
+
+- 73faaa3: babel configuration
+
 ## 2.1.1
 
 ### Patch Changes
