@@ -1,5 +1,5 @@
 import { gitmojis } from '@utils/emoji.js';
-import printEmojis from '@utils/printEmojis';
+import printEmojis from '@utils/printEmojis.js';
 
 const list = () => printEmojis(gitmojis);
 

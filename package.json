@@ -2,21 +2,13 @@
   "name": "gitemo-cli",
   "version": "2.1.1",
   "bin": {
-    "gitemo": "src/gitemo.sh"
+    "gitemo": "lib/cli.js"
   },
-  "main": "src/cli.js",
   "files": [
-    "src"
+    "lib"
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "aliases": {
-    "@root": ".",
-    "@": "src",
-    "@constants": "src/constants",
-    "@utils": "src/utils",
-    "@commands": "src/commands"
   },
   "description": "A cli tool to make your git commits fun!",
   "repository": "https://github.com/SySagar/gitemo-cli.git",
@@ -25,6 +17,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint ./src/**/*.{js,ts}",
+    "build": "babel src -d lib --extensions \".js,.ts\"",
     "format": "prettier --write src/**/* && git add -A .",
     "release": "changeset publish",
     "prepare": "husky",
@@ -35,7 +28,6 @@
     "@changesets/cli": "^2.27.6",
     "chalk": "^5.3.0",
     "conf": "^13.0.1",
-    "esm-module-alias": "^2.2.0",
     "execa": "^9.3.0",
     "fuse.js": "^7.0.0",
     "inquirer": "^9.2.23",
@@ -44,7 +36,14 @@
     "update-notifier": "^7.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-syntax-import-assertions": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "@eslint/js": "^9.3.0",
+    "babel-plugin-module-extension-resolver": "^1.0.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "babel-plugin-transform-import-meta": "^2.2.1",
     "eslint": "9.x",
     "globals": "^15.3.0",
     "husky": "^9.0.11",

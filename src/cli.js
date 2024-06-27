@@ -6,17 +6,17 @@ import findGitemoCommand from '@utils/findGitemoCommands.js';
 const cli = meow(
   `
     Usage
-      $ gitmoji [option] [command]
+      $ gitemo [option] [command]
     Options
       --${FLAGS.COMMIT}, -c    Interactively commit using the prompts
-      --${FLAGS.LIST}, -l      List all the available gitmojis
-      --${FLAGS.VERSION}, -v   Print gitmoji-cli installed version
+      --${FLAGS.LIST}, -l      List all the available git emojis
+      --${FLAGS.VERSION}, -v   Print gitemo-cli installed version
     Commands
       commit          Interactively commit using the prompts
       list            List all the available gitmojis
-      version         Print gitmoji-cli installed version
+      version         Print gitemo-cli installed version
     Examples
-      $ gitmoji -c
+      $ gitemo -c
   `,
   {
     importMeta: { url: import.meta.url },
