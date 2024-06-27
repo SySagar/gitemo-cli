@@ -2,11 +2,17 @@
   "name": "gitemo-cli",
   "version": "2.0.0",
   "bin": {
-    "test-gitemo": "src/cli.js"
+    "gitemo": "src/gitemo.sh"
   },
+  "main": "src/cli.js",
   "files": [
     "src"
   ],
+  "aliases": {
+    "@root": ".",
+    "@": "src",
+    "@constants": "src/constants"
+  },
   "description": "A cli tool to make your git commits fun!",
   "repository": "https://github.com/SySagar/gitemo-cli.git",
   "author": "Sagar <sysagar07@gmail.com>",
@@ -17,11 +23,12 @@
     "format": "prettier --write src/**/* && git add -A .",
     "prepare": "husky",
     "update": "npm install -g gitemo-cli",
-    "re-link": "npm unlink test-gitemo && npm link"
+    "re-link": "npm unlink gitemo && npm link"
   },
   "dependencies": {
     "chalk": "^5.3.0",
     "conf": "^13.0.1",
+    "esm-module-alias": "^2.2.0",
     "execa": "^9.3.0",
     "fuse.js": "^7.0.0",
     "inquirer": "^9.2.23",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import meow from 'meow';
-import FLAGS from './constants/flag.js';
+import FLAGS from '@constants/flag.js';
 import findGitemoCommand from './utils/findGitemoCommands.js';
 
 const cli = meow(
