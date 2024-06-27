@@ -23,6 +23,7 @@
   "scripts": {
     "lint": "eslint ./src/**/*.{js,ts}",
     "format": "prettier --write src/**/* && git add -A .",
+    "release": "changeset publish",
     "prepare": "husky",
     "update": "npm install -g gitemo-cli",
     "re-link": "npm unlink gitemo && npm link"
