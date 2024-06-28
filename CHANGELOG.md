@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.2.2
+
+### Patch Changes
+
+- 61c9f13: build issues
+
 ## 2.2.0
 
 ### Minor Changes
