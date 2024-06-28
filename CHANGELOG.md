@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.2.1
+
+### Patch Changes
+
+- 6ad397c: updatedactions
+
 ## 2.2.0
 
 ### Minor Changes
