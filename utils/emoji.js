@@ -1,0 +1,71 @@
+export const gitmojis = [{
+  emoji: '🚀',
+  code: ':rocket:',
+  description: 'New feature or proposition',
+  type: 'feat',
+  name: 'rocket',
+  semver: null
+}, {
+  emoji: '🐛',
+  code: ':bug:',
+  description: 'Fix a bug',
+  type: 'fix',
+  name: 'bug',
+  semver: 'patch'
+}, {
+  emoji: '📝',
+  code: ':memo:',
+  description: 'Add or update documentation',
+  type: 'docs',
+  name: 'docs',
+  semver: null
+}, {
+  emoji: '💄',
+  code: ':lipstick:',
+  description: 'Add or update the UI and style files.',
+  type: 'style',
+  name: 'lipstick',
+  semver: 'patch'
+}, {
+  emoji: '♻️',
+  code: ':recycle:',
+  description: 'Refactor code.',
+  type: 'refactor',
+  name: 'recycle',
+  semver: null
+}, {
+  emoji: '🧪',
+  code: ':test_tube:',
+  description: 'Add test cases, test files or fix existing tests.',
+  type: 'test',
+  name: 'test-tube',
+  semver: null
+}, {
+  emoji: '⚙️',
+  code: ':chore:',
+  description: 'Update grunt task/ auxilary tasks',
+  type: 'chore',
+  name: 'chore',
+  semver: null
+}, {
+  emoji: '🔖',
+  code: ':bookmark:',
+  description: 'Release / Version tags.',
+  type: 'release',
+  name: 'bookmark',
+  semver: null
+}, {
+  emoji: '🚧',
+  code: ':construction:',
+  description: 'Work in progress.',
+  type: 'wip',
+  name: 'construction',
+  semver: null
+}, {
+  emoji: '📦',
+  code: ':package:',
+  description: 'Update compiled files or packages.',
+  type: 'package',
+  name: 'package',
+  semver: null
+}];
