@@ -22,6 +22,7 @@ const cli = meow(
     importMeta: { url: import.meta.url },
     flags: {
       [FLAGS.COMMIT]: { type: 'boolean', shortFlag: 'c' },
+      [FLAGS.AIC]: { type: 'boolean', shortFlag: 'aic' },
       [FLAGS.HELP]: { type: 'boolean', shortFlag: 'h' },
       [FLAGS.LIST]: { type: 'boolean', shortFlag: 'l' },
       [FLAGS.VERSION]: { type: 'boolean', shortFlag: 'v' },
@@ -32,6 +33,8 @@ const cli = meow(
 export const options = {
   [FLAGS.COMMIT]:async (options) =>
   (await import('./commands/commit/index.js')).default(options),
+  [FLAGS.AIC]:async (options) =>
+  (await import('./commands/ai-commit/index.js')).default(options),
   [FLAGS.LIST]: async () =>
   (await import('./commands/list/index.js')).default(),
 }

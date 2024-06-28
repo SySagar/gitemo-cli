@@ -3,6 +3,7 @@ const FLAGS = Object.freeze({
   HELP: 'help',
   LIST: 'list',
   VERSION: 'version',
+  AIC: 'aiCommit',
 });
 
 export default FLAGS;
