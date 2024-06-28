@@ -21,12 +21,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm installand build
+      - name: Install dependencies and build
         run: |
           npm install --frozen-lockfile
           npm run build --if-present
         env:
           CI: true
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: ./lib
 
   publish:
     runs-on: ubuntu-latest
@@ -37,10 +42,12 @@ jobs:
         with:
           node-version: 21.x
           cache: "npm"
-
-      - name: Install project    
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+      - name: Install project
         run: npm install
-
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
