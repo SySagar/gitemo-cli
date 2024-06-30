@@ -8,7 +8,7 @@
 
 ## About
 
-This project provides an easy solution for developing production level commit messages. Whats more? Includes a bunch of options you can play with! :tada:
+[Gitemo](https://github.com/SySagar/gitemo) provides an easy solution for developing production level commit messages. Whats more? Includes a bunch of options you can play with! :tada:
 
 ## Install
 
