@@ -1,5 +1,5 @@
 /* eslint-disable */
-import guard from './guard.js';
+import guard from '@utils/guard.js';
 import { capitaliseTitle } from '../../utils/capitaliseTitle.js';
 import inquirer from 'inquirer';
 import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt';
