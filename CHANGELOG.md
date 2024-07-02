@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.2.4
+
+### Patch Changes
+
+- 472c51c: fixes dotenv dependency
+
 ## 2.2.3
 
 ### Patch Changes
