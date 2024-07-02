@@ -1,5 +1,12 @@
 # gitemo-cli
 
+## 2.2.3
+
+### Patch Changes
+
+- 4a1d808: ai commit feature
+- 1a08afb: environment variables for babel
+
 ## 2.2.2
 
 ### Patch Changes
