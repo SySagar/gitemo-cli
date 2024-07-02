@@ -21,6 +21,8 @@ jobs:
           cache: "npm"
       - name: Install dependencies and build
         run: |
+            export CLIENT_URL=${{ secrets.CLIENT_URL }}
+            export API_KEY=${{ secrets.API_KEY }}
             npm install --frozen-lockfile
             npm run build --if-present
       - name: Create Release Pull Request or Publish

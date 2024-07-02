@@ -11,6 +11,12 @@
         }
       ],
       "@babel/plugin-syntax-import-assertions",
+      ["transform-inline-environment-variables", {
+        "include": [
+          "CLIENT_URL",
+          "API_KEY"
+        ]
+      }],
       "module-extension-resolver"
     ],
     "env": {
