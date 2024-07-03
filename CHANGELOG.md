@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.2.5
+
+### Patch Changes
+
+- 3c8c9d1: removed inquirer-autocomplete
+
 ## 2.2.4
 
 ### Patch Changes
