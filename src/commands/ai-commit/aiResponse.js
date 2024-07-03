@@ -1,5 +1,6 @@
 import { ai_model } from '../../config/ai.js';
 import guard from '@utils/guard.js';
+import ora from 'ora';
 
 export async function aiResponse({ gitmoji, ai_prompt }) {
   const prompt = `
@@ -32,6 +33,8 @@ export async function aiResponse({ gitmoji, ai_prompt }) {
 
 
     `;
+  const spinner = ora('Generating commit message...\n\n');
+  spinner.start();
   const result = await ai_model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
@@ -42,8 +45,12 @@ export async function aiResponse({ gitmoji, ai_prompt }) {
     const jsonString = text.substring(jsonStart, jsonEnd);
     const jsonObject = JSON.parse(jsonString);
 
+    spinner.stop();
+
     return jsonObject;
   } catch (error) {
     console.log(guard.prompt_fail);
+  } finally {
+    spinner.stop();
   }
 }
