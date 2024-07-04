@@ -1,4 +1,6 @@
 import FLAGS from '@constants/flag.js';
+import requireLogin from './requireLogin';
+import chalk from 'chalk';
 
 const isSupportedCommand = (command, options) => {
   return Object.keys(options).includes(command);
@@ -37,6 +39,19 @@ const getOptionsForCommand = (command, flags, input, type) => {
 
 const findGitemoCommand = (cli, options) => {
   const { command, type } = determineCommand(cli.flags, cli.input, options);
+
+  var key = requireLogin(command);
+
+  if (command === FLAGS.LOGIN) {
+    if (key && key !== 1) {
+      console.log(chalk.bold.green(`\n\nYou are already logged in\n\n`));
+      return;
+    }
+  }
+
+  if (!key || key === undefined) {
+    return;
+  }
 
   if (!command || !isSupportedCommand(command, options)) {
     return cli.showHelp();
