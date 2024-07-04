@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.3.0
+
+### Minor Changes
+
+- e55cb15: authentication for cli
+
 ## 2.2.5
 
 ### Patch Changes
