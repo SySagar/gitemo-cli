@@ -28,6 +28,7 @@
     "@changesets/cli": "^2.27.6",
     "@google/generative-ai": "^0.14.0",
     "async-listen": "^3.0.1",
+    "bcrypt": "^5.1.1",
     "chalk": "^5.3.0",
     "conf": "^13.0.1",
     "dotenv": "^16.4.5",
@@ -38,6 +39,8 @@
     "meow": "^13.2.0",
     "nanoid": "^5.0.7",
     "ora": "^8.0.1",
+    "path-exists": "^5.0.0",
+    "rate-limiter-flexible": "^5.0.3",
     "update-notifier": "^7.0.0"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ const FLAGS = Object.freeze({
   VERSION: 'version',
   AIC: 'aiCommit',
   LOGIN: 'login',
+  CONFIG: 'config',
 });
 
 export default FLAGS;

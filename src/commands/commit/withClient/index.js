@@ -1,6 +1,7 @@
 import { execa } from 'execa';
 import chalk from 'chalk';
 import configurationVault from '@utils/configurationVault/index.js';
+import { incrementCount } from '../../../config/rateLimit.js';
 
 const withClient = async (answers) => {
   try {
@@ -26,6 +27,7 @@ const withClient = async (answers) => {
         stdio: 'inherit',
       }
     );
+    incrementCount();
   } catch (error) {
     console.error(
       chalk.red(

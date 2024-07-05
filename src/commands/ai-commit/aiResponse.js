@@ -22,8 +22,8 @@ export async function aiResponse({ gitmoji, ai_prompt }) {
     if type is'feat'
     and about is 'I have done task like pretifying code and code correction'
 
-    it should strictly return like this format which is a json object with all proper space, formatting and intial letter of title capital:
-    { gitmoji: '🚀 feat', title: 'Pretifying code and code correction', message: 'The code changes prettifies code and also does correction' }
+    it should strictly return like this format which is a json object with all proper space, formatting and intial letter of title small:
+    { gitmoji: '🚀 feat', title: 'commit title', message: 'Whatever changes has been madein this commit' }
 
     Make sure there is a space between emoji and type like this
     gitmoji: '⚙️ chore'

@@ -37,34 +37,40 @@ const getOptionsForCommand = (command, flags, input, type) => {
   return null;
 };
 
-const findGitemoCommand = (cli, options) => {
+const findGitemoCommand = async (cli, options) => {
   const { command, type } = determineCommand(cli.flags, cli.input, options);
-
-  var key = requireLogin(command);
-
-  if (command === FLAGS.LOGIN) {
-    if (key && key !== 1) {
-      console.log(chalk.bold.green(`\n\nYou are already logged in\n\n`));
-      return;
-    }
-  }
-
-  if (!key || key === undefined) {
-    return;
-  }
 
   if (!command || !isSupportedCommand(command, options)) {
     return cli.showHelp();
   }
 
-  const commandOptions = getOptionsForCommand(
-    command,
-    cli.flags,
-    cli.input,
-    type
-  );
+  requireLogin(command).then((key) => {
+    if (command === FLAGS.LOGIN) {
+      if (key && key !== 1) {
+        console.log(
+          chalk.bold.green(`\n\nYou are already logged in already\n\n`)
+        );
+        return;
+      }
+    }
 
-  return options[command] ? options[command](commandOptions) : cli.showHelp();
+    if (!key || key === undefined) {
+      return;
+    }
+
+    if (!command || !isSupportedCommand(command, options)) {
+      return cli.showHelp();
+    }
+
+    const commandOptions = getOptionsForCommand(
+      command,
+      cli.flags,
+      cli.input,
+      type
+    );
+
+    return options[command] ? options[command](commandOptions) : cli.showHelp();
+  });
 };
 
 export default findGitemoCommand;

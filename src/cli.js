@@ -9,6 +9,8 @@ const cli = meow(
       $ gitemo [option] [command]
     Options
       --${FLAGS.COMMIT}, -c    Interactively commit using the prompts
+      --${FLAGS.HELP}, -h      Display help message
+      --${FLAGS.CONFIG}, -g    Configure gitemo-cli
       --${FLAGS.AIC}, -aic     Interactively commit using the ai
       --${FLAGS.LIST}, -l      List all the available git emojis
       --${FLAGS.VERSION}, -v   Print gitemo-cli installed version
@@ -16,6 +18,7 @@ const cli = meow(
       commit          Interactively commit using the prompts
       list            List all the available gitmojis
       version         Print gitemo-cli installed version
+      config          Configure gitemo-cli
       login           Login to your account
     Examples
       $ gitemo -c
@@ -27,6 +30,7 @@ const cli = meow(
       [FLAGS.AIC]: { type: 'boolean', shortFlag: 'aic' },
       [FLAGS.HELP]: { type: 'boolean', shortFlag: 'h' },
       [FLAGS.LIST]: { type: 'boolean', shortFlag: 'l' },
+      [FLAGS.CONFIG]: { type: 'boolean' , shortFlag: 'g'},
       [FLAGS.VERSION]: { type: 'boolean', shortFlag: 'v' },
       [FLAGS.LOGIN]: { type: 'boolean'},
     },
@@ -40,6 +44,8 @@ export const options = {
   (await import('./commands/ai-commit/index.js')).default(options),
   [FLAGS.LIST]: async () =>
   (await import('./commands/list/index.js')).default(),
+  [FLAGS.CONFIG]: async () =>
+  (await import('./commands/config/index.js')).default(),
   [FLAGS.LOGIN]: async () =>
   (await import('./commands/login/index.js')).default(),
 }
