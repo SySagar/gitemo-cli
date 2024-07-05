@@ -4,4 +4,5 @@ export const CONFIG = {
   CAPITALIZE_TITLE: 'capitalizeTitle',
   RATE_LIMIT_COUNT: 'rateLimitCount',
   RATE_LIMIT_TIMESTAMP: 'rateLimitTimestamp',
+  USER_KEY: 'userKey',
 };

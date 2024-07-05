@@ -10,6 +10,7 @@ const DEFAULT_CONFIGURATION = {
   [CONFIG.AUTO_ADD]: false,
   [CONFIG.RATE_LIMIT_COUNT]: 0,
   [CONFIG.RATE_LIMIT_TIMESTAMP]: Date.now().toString(),
+  [CONFIG.USER_KEY]: '',
 };
 
 const LOCAL_CONFIGURATION = new Conf({
@@ -34,6 +35,10 @@ const LOCAL_CONFIGURATION = new Conf({
     [CONFIG.RATE_LIMIT_TIMESTAMP]: {
       type: 'string',
       default: DEFAULT_CONFIGURATION[CONFIG.RATE_LIMIT_TIMESTAMP],
+    },
+    [CONFIG.USER_KEY]: {
+      type: 'string',
+      default: DEFAULT_CONFIGURATION[CONFIG.USER_KEY],
     },
   },
 });

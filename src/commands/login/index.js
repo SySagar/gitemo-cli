@@ -1,6 +1,6 @@
 import http from 'http';
 import chalk from 'chalk';
-import { writeFileSync } from 'fs';
+import { writeFileSync, writeFile } from 'fs';
 import ora from 'ora';
 import url from 'url';
 import { customAlphabet } from 'nanoid';
@@ -8,6 +8,8 @@ import { listen } from 'async-listen';
 import dotenv from 'dotenv';
 import { spawn } from 'child_process';
 import path from 'path';
+import { hashPassword } from '@utils/hash.js';
+import configurationVault from '@utils/configurationVault/index.js';
 
 dotenv.config();
 import os from 'os';
@@ -25,7 +27,16 @@ async function writeToConfigFile(data) {
   try {
     const homeDir = os.homedir();
     const filePath = path.join(homeDir, FILENAME);
-    writeFileSync(filePath, JSON.stringify(data));
+
+    configurationVault.setUserKey(data.key);
+    await hashPassword(data.key)
+      .then((hashedPassword) => {
+        data.key = hashedPassword;
+        return data;
+      })
+      .then((data) => {
+        writeFileSync(filePath, JSON.stringify(data));
+      });
   } catch (error) {
     console.error('Error writing to local config file', error);
   }
@@ -95,7 +106,7 @@ export default async function login() {
     spinner.start();
     const authData = await authPromise;
     spinner.stop();
-    writeToConfigFile(authData);
+    await writeToConfigFile(authData);
     console.log(
       `Authentication successful: wrote key to config file. To view it, type 'cat ~/${FILENAME}'.\n`
     );
