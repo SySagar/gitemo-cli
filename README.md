@@ -10,6 +10,8 @@
 
 [Gitemo](https://github.com/SySagar/gitemo) provides an easy solution for developing production level commit messages. Whats more? Includes a bunch of options you can play with! :tada:
 
+https://github.com/SySagar/gitemo-cli/assets/93787385/824cbf02-f88f-4db7-9eb6-1e7161767487
+
 ## Install
 
 ### npm
@@ -38,6 +40,7 @@ gitemo --help
       list               List all the available gitmojis
       version            Print gitemo-cli installed version
       config             Change configuration
+      login              To login into the cli
     Examples
       $ gitemo -c
 ```
@@ -54,7 +57,7 @@ gitemo --c
 
 ##### Options
 
-You can pass default values to the prompts using the following flags:
+You can aldo pass default values to the prompts using the following flags:
 
 - `title`: For setting the commit title.
 - `message`: For setting the commit message.
@@ -122,4 +125,4 @@ If no user configuration is found, a set of default values will be used.
 
 #### Local configuration
 
-Run `gitemo -g` to setup some gitmoji-cli preferences.
+Run `gitemo --g` to setup some gitemo-cli preferences.
