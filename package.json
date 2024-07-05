@@ -39,6 +39,7 @@
     "nanoid": "^5.0.7",
     "ora": "^8.0.1",
     "path-exists": "^5.0.0",
+    "rate-limiter-flexible": "^5.0.3",
     "update-notifier": "^7.0.0"
   },
   "devDependencies": {

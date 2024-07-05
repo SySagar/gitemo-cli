@@ -8,6 +8,8 @@ const DEFAULT_CONFIGURATION = {
   [CONFIG.MESSAGE_PROMPT]: true,
   [CONFIG.CAPITALIZE_TITLE]: true,
   [CONFIG.AUTO_ADD]: false,
+  [CONFIG.RATE_LIMIT_COUNT]: 0,
+  [CONFIG.RATE_LIMIT_TIMESTAMP]: Date.now().toString(),
 };
 
 const LOCAL_CONFIGURATION = new Conf({
@@ -24,6 +26,14 @@ const LOCAL_CONFIGURATION = new Conf({
     [CONFIG.AUTO_ADD]: {
       type: 'boolean',
       default: DEFAULT_CONFIGURATION[CONFIG.AUTO_ADD],
+    },
+    [CONFIG.RATE_LIMIT_COUNT]: {
+      type: 'number',
+      default: DEFAULT_CONFIGURATION[CONFIG.RATE_LIMIT_COUNT],
+    },
+    [CONFIG.RATE_LIMIT_TIMESTAMP]: {
+      type: 'string',
+      default: DEFAULT_CONFIGURATION[CONFIG.RATE_LIMIT_TIMESTAMP],
     },
   },
 });
