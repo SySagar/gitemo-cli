@@ -56,8 +56,8 @@ const getConfiguration = () => {
     const packageJson = `${cwd()}/package.json`;
     const configurationFile = `${cwd()}/.gitemorc.json`;
 
-    if (pathExistsSync(packageJson) && getFile(packageJson)?.gitmoji) {
-      return getFile(packageJson)?.gitmoji;
+    if (pathExistsSync(packageJson) && getFile(packageJson)?.gitemo) {
+      return getFile(packageJson)?.gitemo;
     }
 
     if (pathExistsSync(configurationFile) && getFile(configurationFile)) {

@@ -4,7 +4,7 @@
 ![NPM Version](https://img.shields.io/npm/v/gitemo-cli)
 
 
-> A interactive client cli tool for using gitmojis on commit messages.
+> A interactive client cli tool for using git emojis on commit messages.
 
 ## About
 
