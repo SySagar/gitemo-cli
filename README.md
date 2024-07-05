@@ -1,4 +1,4 @@
-# gitemo-cli
+# [gitemo-cli](https://github.com/SySagar/gitemo)
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/sysagar/gitemo-cli/build_and_publish.yaml)
 ![NPM Version](https://img.shields.io/npm/v/gitemo-cli)
@@ -86,6 +86,40 @@ You can use the default configs or customize your own configurations.
 
 Some of the default settings are:
 
-```bash
-gitemo --g
+- **Automatic git add**: Enable or disable the automatic `git add .` every time you use the commit command.
+- **Message prompt**: Enable or disable the message prompt.
+- **Capitalize title**: Capitalize Title
+
+You can configure these options via (in order of precedence):
+
+- A `gitemo` key in your `package.json` file
+- A `.gitemorc.json` file.
+- Using the global cli configuration.
+
+If no user configuration is found, a set of default values will be used.
+
+#### `package.json`
+
+```json
+{
+  "gitemo": {
+    "autoAdd": false,
+    "messagePrompt": false,
+    "capitalizeTitle": true,
+  }
+}
 ```
+
+#### `.gitemorc.json`
+
+```json
+{
+  "autoAdd": false,
+  "messagePrompt": false,
+  "capitalizeTitle": true,
+}
+```
+
+#### Local configuration
+
+Run `gitemo -g` to setup some gitmoji-cli preferences.
