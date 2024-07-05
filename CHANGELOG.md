@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.4.2
+
+### Patch Changes
+
+- 2d50b47: babel inline variables updated
+
 ## 2.4.1
 
 ### Patch Changes
