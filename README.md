@@ -28,13 +28,16 @@ gitemo --help
     Usage
       $ gitemo [option] [command]
     Options
-     --commit, -c    Interactively commit using the prompts
-     --list, -l      List all the available git emojis
-     --version, -v   Print gitemo-cli installed version
+     --commit, -c        Interactively commit using the prompts
+     --aiCommit, --aic   Use ai for generating commits
+     --config, --g       To change configuration
+     --list, -l          List all the available git emojis
+     --version, -v       Print gitemo-cli installed version
     Commands
-      commit          Interactively commit using the prompts
-      list            List all the available gitmojis
-      version         Print gitemo-cli installed version
+      commit             Interactively commit using the prompts
+      list               List all the available gitmojis
+      version            Print gitemo-cli installed version
+      config             Change configuration
     Examples
       $ gitemo -c
 ```
@@ -46,7 +49,7 @@ You can use the commit functionality to develop your commits message based on pr
 Start the interactive commit client, to auto generate your commit based on your prompts.
 
 ```bash
-gitemo -c
+gitemo --c
 ```
 
 ##### Options
@@ -67,7 +70,7 @@ gitemo -c --title="Commit" --message="Message" --scope="Scope"
 Pretty print all the available git emojis.
 
 ```bash
-gitemo -l
+gitemo --l
 ```
 
 ### Version
@@ -75,5 +78,14 @@ gitemo -l
 List down the current version of the cli
 
 ```bash
-gitemo -v
+gitemo --v
+```
+### Config
+
+You can use the default configs or customize your own configurations.
+
+Some of the default settings are:
+
+```bash
+gitemo --g
 ```

@@ -30,7 +30,9 @@ export default async (gitmojis, options) => {
         const length = (title || input).length.toString().padStart(2, '0');
 
         return `[${length}/${TITLE_MAX_LENGTH_COUNT}]: ${
-          configurationVault.getCapitalizeTitle ? capitaliseTitle(input) : input
+          configurationVault.getCapitalizeTitle()
+            ? capitaliseTitle(input)
+            : input
         }`;
       },
       ...(title ? { default: title } : {}),

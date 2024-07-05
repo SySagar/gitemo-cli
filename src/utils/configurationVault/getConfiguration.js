@@ -1,6 +1,8 @@
 import Conf from 'conf';
-
-import { CONFIG } from '../../constants/config.js';
+import { cwd } from 'process';
+import { readFileSync } from 'fs';
+import { pathExistsSync } from 'path-exists';
+import { CONFIG } from '@constants/config.js';
 
 const DEFAULT_CONFIGURATION = {
   [CONFIG.MESSAGE_PROMPT]: true,
@@ -26,10 +28,40 @@ const LOCAL_CONFIGURATION = new Conf({
   },
 });
 
+const getFile = (path) => {
+  try {
+    return JSON.parse(readFileSync(path));
+  } catch (error) {
+    return;
+  }
+};
+
 const getConfiguration = () => {
+  const loadConfig = () => {
+    const packageJson = `${cwd()}/package.json`;
+    const configurationFile = `${cwd()}/.gitemorc.json`;
+
+    if (pathExistsSync(packageJson) && getFile(packageJson)?.gitmoji) {
+      return getFile(packageJson)?.gitmoji;
+    }
+
+    if (pathExistsSync(configurationFile) && getFile(configurationFile)) {
+      return getFile(configurationFile);
+    }
+
+    return LOCAL_CONFIGURATION.store;
+  };
+
   return {
     get: (key) => {
-      return LOCAL_CONFIGURATION.get(key) ?? DEFAULT_CONFIGURATION[key]; //fallback to default if null/undefined for local
+      const resolvedConfiguration = loadConfig();
+      const configuration =
+        typeof resolvedConfiguration === 'object' &&
+        Object.keys(resolvedConfiguration).length
+          ? resolvedConfiguration
+          : DEFAULT_CONFIGURATION;
+
+      return configuration[key] ?? DEFAULT_CONFIGURATION[key]; //fallback to default if null/undefined for configuration[key]
     },
     set: (key, value) => {
       LOCAL_CONFIGURATION.set(key, value);

@@ -38,6 +38,7 @@
     "meow": "^13.2.0",
     "nanoid": "^5.0.7",
     "ora": "^8.0.1",
+    "path-exists": "^5.0.0",
     "update-notifier": "^7.0.0"
   },
   "devDependencies": {

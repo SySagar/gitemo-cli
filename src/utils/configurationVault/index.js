@@ -8,14 +8,14 @@ const getMessagePrompt = () => config.get(CONFIG.MESSAGE_PROMPT);
 const getAutoAdd = () => config.get(CONFIG.AUTO_ADD);
 
 const setAutoAdd = (autoAdd) => {
-  config.set(CONFIG.AUTO_ADD, autoAdd);
+  return config.set(CONFIG.AUTO_ADD, autoAdd);
 };
 const setCapitalizeTitle = (capitalizeTitle) => {
-  config.set(CONFIG.CAPITALIZE_TITLE, capitalizeTitle);
+  return config.set(CONFIG.CAPITALIZE_TITLE, capitalizeTitle);
 };
 
 const setMessagePrompt = (messagePrompt) => {
-  config.set(CONFIG.MESSAGE_PROMPT, messagePrompt);
+  return config.set(CONFIG.MESSAGE_PROMPT, messagePrompt);
 };
 
 export default {
