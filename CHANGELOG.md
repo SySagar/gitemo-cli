@@ -1,5 +1,16 @@
 # gitemo-cli
 
+## 2.4.0
+
+### Minor Changes
+
+- 79e7c60: configuration options for the cli
+
+### Patch Changes
+
+- 71c3d08: rate-limiting to prevent api keys
+- e18ef7c: authenticated commands using clerk token
+
 ## 2.3.0
 
 ### Minor Changes
