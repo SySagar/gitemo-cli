@@ -24,6 +24,7 @@ jobs:
             export CLIENT_URL=${{ secrets.CLIENT_URL }}
             export API_KEY=${{ secrets.API_KEY }}
             export KEY_FILENAME=${{ secrets.KEY_FILENAME }}
+            export CLERK_TOKEN=${{ secrets.CLERK_TOKEN }}
             npm install --frozen-lockfile
             npm run build --if-present
       - name: Create Release Pull Request or Publish
