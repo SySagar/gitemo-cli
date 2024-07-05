@@ -14,7 +14,8 @@
       ["transform-inline-environment-variables", {
         "include": [
           "CLIENT_URL",
-          "API_KEY"
+          "API_KEY",
+          "KEY_FILENAME"
         ]
       }],
       "module-extension-resolver"
