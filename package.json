@@ -1,6 +1,6 @@
 {
   "name": "gitemo-cli",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "bin": {
     "gitemo": "lib/cli.js"
   },

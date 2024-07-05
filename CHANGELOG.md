@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.4.1
+
+### Patch Changes
+
+- ce77526: minor reafctoring of file names
+
 ## 2.4.0
 
 ### Minor Changes
