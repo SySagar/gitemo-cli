@@ -1,7 +1,7 @@
 // rateLimiter.js
 import configurationVault from '@utils/configurationVault/index.js';
 
-const LIMIT = 4;
+const LIMIT = configurationVault.getMaxRateLimitCount();
 const TIME_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 
 export const isRateLimited = () => {

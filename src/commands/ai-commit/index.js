@@ -29,10 +29,16 @@ const promptAndCommit = (options) => {
 };
 
 const aiCommit = (options) => {
-  if (isRateLimited()) {
+  if (configurationVault.getAIKey() === '') {
+    console.log(chalk.red('No AI key found. Please set one using:'));
+    console.log(chalk.blue('gitemo --g\n'));
+    return;
+  }
+
+  if (configurationVault.getMaxRateLimitCount() > 0 && isRateLimited()) {
     console.log(
       chalk.red(
-        'Error: You have exceeded the maximum number of AI commits per hour. Please try again later.'
+        'You have exceeded the maximum number of AI commits per hour. Please try again later.'
       )
     );
     return;
