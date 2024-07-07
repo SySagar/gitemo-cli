@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.4.4
+
+### Patch Changes
+
+- ab28e96: added ai key setting
+
 ## 2.4.3
 
 ### Patch Changes
