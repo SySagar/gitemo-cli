@@ -68,6 +68,15 @@ Those flags should be used like this:
 gitemo -c --title="Commit" --message="Message" --scope="Scope"
 ```
 
+### AI-Commit
+
+You can use AI to generate your commits too. You can give prompt on exactly what and how you did. Accordingly a commit message will be generated. Curently the cli uses `gemini-flash-1.5`
+> Make sure to setup your gemini api key in the gitemo config. You can get it from [here](https://aistudio.google.com/app/apikey)
+
+```bash
+gitemo --aic
+```
+
 ### List
 
 Pretty print all the available git emojis.
@@ -92,6 +101,8 @@ Some of the default settings are:
 - **Automatic git add**: Enable or disable the automatic `git add .` every time you use the commit command.
 - **Message prompt**: Enable or disable the message prompt.
 - **Capitalize title**: Capitalize Title
+- **Api key**: Paste you gemini api key
+- **Rate limit count**: By default set to 0. You can set it as per your need.
 
 You can configure these options via (in order of precedence):
 
@@ -109,6 +120,8 @@ If no user configuration is found, a set of default values will be used.
     "autoAdd": false,
     "messagePrompt": false,
     "capitalizeTitle": true,
+    "AIKey": whatever your key,
+    "maxRateLimitCount": 4
   }
 }
 ```
@@ -120,6 +133,8 @@ If no user configuration is found, a set of default values will be used.
   "autoAdd": false,
   "messagePrompt": false,
   "capitalizeTitle": true,
+  "AIKey": whatever your key,
+  "maxRateLimitCount": 4
 }
 ```
 
