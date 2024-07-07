@@ -1,5 +1,11 @@
 # gitemo-cli
 
+## 2.4.3
+
+### Patch Changes
+
+- 02f5982: wan about disabled auto-add feature
+
 ## 2.4.2
 
 ### Patch Changes
