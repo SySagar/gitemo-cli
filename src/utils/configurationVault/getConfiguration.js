@@ -9,8 +9,10 @@ const DEFAULT_CONFIGURATION = {
   [CONFIG.CAPITALIZE_TITLE]: true,
   [CONFIG.AUTO_ADD]: false,
   [CONFIG.RATE_LIMIT_COUNT]: 0,
+  [CONFIG.MAX_RATE_LIMIT_COUNT]: 0,
   [CONFIG.RATE_LIMIT_TIMESTAMP]: Date.now().toString(),
   [CONFIG.USER_KEY]: '',
+  [CONFIG.AI_KEY]: '',
 };
 
 const LOCAL_CONFIGURATION = new Conf({
@@ -32,6 +34,10 @@ const LOCAL_CONFIGURATION = new Conf({
       type: 'number',
       default: DEFAULT_CONFIGURATION[CONFIG.RATE_LIMIT_COUNT],
     },
+    [CONFIG.MAX_RATE_LIMIT_COUNT]: {
+      type: 'number',
+      default: DEFAULT_CONFIGURATION[CONFIG.MAX_RATE_LIMIT_COUNT],
+    },
     [CONFIG.RATE_LIMIT_TIMESTAMP]: {
       type: 'string',
       default: DEFAULT_CONFIGURATION[CONFIG.RATE_LIMIT_TIMESTAMP],
@@ -39,6 +45,10 @@ const LOCAL_CONFIGURATION = new Conf({
     [CONFIG.USER_KEY]: {
       type: 'string',
       default: DEFAULT_CONFIGURATION[CONFIG.USER_KEY],
+    },
+    [CONFIG.AI_KEY]: {
+      type: 'string',
+      default: DEFAULT_CONFIGURATION[CONFIG.AI_KEY],
     },
   },
 });
