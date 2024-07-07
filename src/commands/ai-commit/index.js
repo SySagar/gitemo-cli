@@ -21,7 +21,7 @@ const promptAndCommit = (options) => {
             ? aiAnswers.message
             : '',
         };
-        console.log(transformedAnswers);
+
         return withClient(transformedAnswers);
       });
     });

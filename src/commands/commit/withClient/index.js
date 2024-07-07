@@ -11,6 +11,12 @@ const withClient = async (answers) => {
     if (isAutoAddEnabled) {
       await execa('git', ['add', '.']);
     } else {
+      console.log(
+        chalk.yellow(
+          'Skipping the git add step. You have disabled the auto add feature.'
+        )
+      );
+      console.log(chalk.yellow('No commit action performed'));
       return;
     }
 
