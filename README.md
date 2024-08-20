@@ -8,7 +8,7 @@
 
 ## About
 
-[Gitemo](https://github.com/SySagar/gitemo) provides an easy solution for developing production level commit messages. Whats more? Includes a bunch of options you can play with! :tada:
+[Gitemo](https://www.npmjs.com/package/gitemo-cli) provides an easy solution for developing production level commit messages. Whats more? Includes a bunch of options you can play with! :tada:
 
 https://github.com/SySagar/gitemo-cli/assets/93787385/824cbf02-f88f-4db7-9eb6-1e7161767487
 
